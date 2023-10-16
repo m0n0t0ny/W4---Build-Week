@@ -126,12 +126,17 @@ background: linear-gradient(0deg, rgba(112, 37, 120, 0.355) 0%, rgba(226,43,208,
   margin-top: 60px;
 }
 .infoBtn button{
-  width: 150px;
-  height: 50px;
+  width: 200px;
+  height: 60px;
   background-color: #00ffff;
   border: none;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
   box-shadow: 1px 0px 8px 3px #00ffff98;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+::placeholder{
+  padding-left: 30px;
+  font-size: 15px;
 }
