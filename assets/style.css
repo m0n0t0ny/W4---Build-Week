@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 *,
 *::after,
@@ -46,29 +47,53 @@ section div{
 }
 
 #answerBox{
+  width: 80%;
   color: white;
   margin-top: 5rem;
   text-align: center;
 }
-
 #answerBox div{
-  width: 200px;
-  height: 40px ;
+  width: 300px;
+  height: 50px ;
   display: inline-block;
   margin-inline: auto;
-  margin: 10px;
-  border: solid 1px white;
-  border-radius: 20px;
+  border: solid 2px white;
+  border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.134);
   margin: 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
 }
 #answerBox div:hover{
-background: linear-gradient(0deg, rgba(112, 37, 120, 0.355) 0%, rgba(226,43,208,0.23) 67%);
+background: linear-gradient(0deg, #d20094 0%, #900080 67%);
 }
 #answerBox p{
   text-align: center;
   padding: 5px;
 }
+
+
+input[type="radio"] {
+  display: none;
++ label {
+  width: 300px;
+  height: 50px ;
+  display: inline-block;
+  margin-inline: auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.134);
+  border: 2px solid white;
+  text-align: center;
+  margin: 10px;
+  }
+  }
+
+  :checked + label {
+    background: linear-gradient(0deg, #d20094 0%, #900080 67%)
+  }
 
 #questionCounter{
   color: white;
