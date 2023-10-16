@@ -75,3 +75,6 @@ background: linear-gradient(0deg, rgba(112, 37, 120, 0.355) 0%, rgba(226,43,208,
   text-align: center;
   margin-top: 10rem;
 }
+#questionCounter span{
+  color: rgb(198, 43, 226);
+}
