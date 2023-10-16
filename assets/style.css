@@ -30,18 +30,18 @@ header img{
 }
 
 
-main div{
+section div{
   width: 500px;
   margin-inline: auto;
 }
-main h1{
+#questionSection h1{
   color: white;
   margin-top: 80px;
   text-align: center;
   font-size: 3rem;
   font-weight: 300;
 }
-main span{
+#questionSection span{
   font-weight: 700;
 }
 
@@ -77,4 +77,61 @@ background: linear-gradient(0deg, rgba(112, 37, 120, 0.355) 0%, rgba(226,43,208,
 }
 #questionCounter span{
   color: rgb(198, 43, 226);
+}
+
+.txtFeedbackSection h2{
+  color: white;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.txtFeedbackSection p{
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  width: 600px;
+  margin-inline: auto;
+}
+
+.ratingStars img{
+  margin-top: 20px;
+}
+.commentArea p{
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+.feedbackArea{
+  width: 90%;
+  text-align: center;
+}
+.feedbackArea textarea{
+  margin-top: 40px;
+  height: 30px;
+  width: 65%;
+  resize: none;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(198, 43, 226);
+  background: transparent;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  outline: none;
+}
+
+.infoBtn{
+  text-align: center;
+  margin-top: 60px;
+}
+.infoBtn button{
+  width: 150px;
+  height: 50px;
+  background-color: aqua;
+  border: none;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  box-shadow: 1px 0px 8px 3px rgba(0, 255, 255, 0.595);
+  font-size: 1rem;
 }
