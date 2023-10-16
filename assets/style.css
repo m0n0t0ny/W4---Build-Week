@@ -15,8 +15,63 @@ html {
 body {
   width: 100%;
   font-family: "Outfit", sans-serif;
+  background-image: url(./bg.jpg);
+  object-fit: cover;
 }
 
 header {
   width: 100%;
+}
+
+header img{
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+
+main div{
+  width: 500px;
+  margin-inline: auto;
+}
+main h1{
+  color: white;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 300;
+}
+main span{
+  font-weight: 700;
+}
+
+#answerBox{
+  color: white;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+#answerBox div{
+  width: 200px;
+  height: 40px ;
+  display: inline-block;
+  margin-inline: auto;
+  margin: 10px;
+  border: solid 1px white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.134);
+  margin: 15px;
+}
+#answerBox div:hover{
+background: linear-gradient(0deg, rgba(112, 37, 120, 0.355) 0%, rgba(226,43,208,0.23) 67%);
+}
+#answerBox p{
+  text-align: center;
+  padding: 5px;
+}
+
+#questionCounter{
+  color: white;
+  text-align: center;
+  margin-top: 10rem;
 }
