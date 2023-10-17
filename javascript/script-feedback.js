@@ -8,14 +8,3 @@ stars.forEach((star, index1) => {
     });
   });
 });
-
-//COMMENT SUBMIT
-// const submitComment = document.getElementById("submit");
-
-// submitComment.addEventListener("keypress", function (event) {
-//   if (event.key === "Enter") {
-//     event.preventDefault();
-//   }
-// });
-
-const textArea = document.querySelectorAll(".feedbackArea textarea");
