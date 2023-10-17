@@ -1,12 +1,13 @@
 // //STARS RATING
-// let stars = document.querySelectorAll(".ratingStars img");
+const stars = document.querySelectorAll(".ratingStars img");
 
-// function illuminate() {
-//   for (let i = 0; i < stars.length; i++) {
-//     stars = document.querySelectorAll("img")[i].style.opacity = 1;
-//   }
-// }
-// stars.addEventListener("click", illuminate());
+stars.forEach((star, index1) => {
+  star.addEventListener("click", () => {
+    stars.forEach((star, index2) => {
+      index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
+    });
+  });
+});
 
 //COMMENT SUBMIT
 // const submitComment = document.getElementById("submit");
@@ -16,3 +17,5 @@
 //     event.preventDefault();
 //   }
 // });
+
+const textArea = document.querySelectorAll(".feedbackArea textarea");

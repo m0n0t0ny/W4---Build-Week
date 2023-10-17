@@ -104,7 +104,7 @@ function loadQuestions() {
     answer.value = i;
 
     answerLabel.textContent =
-      questions[currentQuestion].correct_answer && questions[currentQuestion].incorrect_answers[i];
+      questions[currentQuestion].correct_answer[i] && questions[currentQuestion].incorrect_answers[i];
 
     answersDiv.appendChild(answer);
     answersDiv.appendChild(answerLabel);

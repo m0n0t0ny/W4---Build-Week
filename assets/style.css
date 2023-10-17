@@ -125,10 +125,11 @@ input[type="radio"] {
 .ratingStars img{
   margin-top: 20px;
   opacity: 0.2;
+  cursor: pointer;
 }
-.ratingStars .active img{
+.ratingStars img.active {
   margin-top: 20px;
-  opacity: unset;
+  opacity: 1;
 }
 
 .commentArea p{
