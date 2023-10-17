@@ -96,7 +96,7 @@ ul{
     top: 2px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border: solid #00ffff;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
