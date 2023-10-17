@@ -83,18 +83,20 @@ const questions = [
 ];
 
 //QUIZ
-
 let currentQuestion = 0;
 let score = 0;
 
 function loadQuestions() {
-  const question = document.getElementById("questionBox");
+  const h1 = document.querySelector("#questionBox h1");
   const answers = document.getElementById("answerBox");
 
-  question.innerText = questions[currentQuestion].question;
+  h1.innerText = questions[currentQuestion].question;
   answers.innerHTML = "";
+  const question = questions[currentQuestion];
+  const totalAnswers = question.incorrect_answers.concat(question.correct_answer);
+  console.log(totalAnswers);
 
-  for (let i = 0; i < questions.length; i++) {
+  for (let i = 0; i < totalAnswers.length; i++) {
     const answersDiv = document.createElement("div");
     const answer = document.createElement("input");
     const answerLabel = document.createElement("label");
@@ -103,8 +105,10 @@ function loadQuestions() {
     answer.name = "answer";
     answer.value = i;
 
-    answerLabel.textContent =
-      questions[currentQuestion].correct_answer[i] && questions[currentQuestion].incorrect_answers[i];
+    answer.id = totalAnswers[i];
+    answerLabel.htmlFor = totalAnswers[i];
+
+    answerLabel.innerText = totalAnswers[i];
 
     answersDiv.appendChild(answer);
     answersDiv.appendChild(answerLabel);
@@ -112,6 +116,10 @@ function loadQuestions() {
   }
 }
 loadQuestions();
+
+//SCORE COUNT
+
+//QUESTIONS COUNT
 
 // TIPS:
 // SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
