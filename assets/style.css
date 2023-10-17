@@ -124,6 +124,11 @@ input[type="radio"] {
 
 .ratingStars img{
   margin-top: 20px;
+  opacity: 0.2;
+}
+.ratingStars .active img{
+  margin-top: 20px;
+  opacity: unset;
 }
 
 .commentArea p{
@@ -149,6 +154,9 @@ input[type="radio"] {
   color: white;
   outline: none;
 }
+.feedbackArea button{
+  display: none;
+}
 
 .infoBtn{
   text-align: center;
@@ -163,6 +171,7 @@ input[type="radio"] {
   font-weight: 700;
   box-shadow: 1px 0px 8px 3px #00ffff98;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 ::placeholder{
