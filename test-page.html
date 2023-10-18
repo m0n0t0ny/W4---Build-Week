@@ -5,10 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Epicode - Exam</title>
     <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/results.css" />
   </head>
   <body>
     <header>
       <img src="./assets/img/epicode_logo.png" alt="logo epicode" />
+      <div class="timer-container">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 40 40"
+          class="donut"
+          id="donut-1"
+        >
+          <circle
+            class="donut-hole"
+            cx="20"
+            cy="20"
+            r="15.91"
+            fill="transparent"
+          ></circle>
+          <circle
+            class="donut-ring"
+            cx="20"
+            cy="20"
+            r="15.91"
+            fill="transparent"
+            stroke-width="5"
+          ></circle>
+          <circle
+            class="donut-segment donut-segment-2"
+            cx="20"
+            cy="20"
+            r="15.91"
+            fill="transparent"
+            stroke-width="5"
+            stroke-dasharray="0"
+            stroke-dashoffset="25"
+          ></circle>
+        </svg>
+        <div id="timer"></div>
+      </div>
     </header>
     <main>
       <section id="question-section">
@@ -19,7 +56,7 @@
 
       <section>
         <div id="answer-box"></div>
-        <button id="next-question" onclick="nextQuestion()">Next</button>
+        <button id="next-question"></button>
       </section>
 
       <section>

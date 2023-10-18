@@ -1,4 +1,4 @@
-const svg = document.querySelector(".donut");
+const svg = document.getElementById("donut-2");
 const circleSegment = svg.querySelector(".donut-segment-2");
 
 let totalAnswers = 20;
