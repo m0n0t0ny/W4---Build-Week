@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 *,
 *::after,
@@ -36,7 +36,6 @@ h3 {
 h5 {
   font-size: 1.5rem;
   font-weight: 400;
-  object-fit: cover;
 }
 
 header {
@@ -80,44 +79,44 @@ button {
   display: block;
 }
 
-header img{
+header img {
   width: 200px;
   margin-top: 40px;
   margin-left: 60px;
 }
 
+/* QUIZ PAGE */
 
-/*QUIZ PAGE*/
-section div{
+section div {
   width: 500px;
   margin-inline: auto;
 }
-#questionSection{
+#questionSection {
   color: white;
   margin-top: 80px;
   text-align: center;
   font-size: 2.5rem;
 }
-#questionSection span{
+#questionSection span {
   font-weight: 700;
 }
 
-#questionBox h2{
+#questionBox h2 {
   font-weight: 300;
   font-size: 2rem;
 }
 
-#answerBox{
+#answerBox {
   width: 90%;
   color: white;
   margin-top: 5rem;
   text-align: center;
 }
-#answerBox div{
+#answerBox div {
   width: 300px;
   height: 50px;
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   padding: 10px;
   margin-inline: auto;
@@ -128,60 +127,59 @@ section div{
 background: linear-gradient(0deg, #d20094 0%, #900080 67%);
 } */
 
-#answerBox p{
+#answerBox p {
   text-align: center;
   padding: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
 }
 
 input[type="radio"] {
   display: none;
-+ label {
-  width: 300px;
-  height: 50px ;
-  display: inline-block;
-  margin-inline: auto;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.134);
-  border: 2px solid white;
-  text-align: center;
-  padding: 15px;
+  + label {
+    width: 300px;
+    height: 50px;
+    display: inline-block;
+    margin-inline: auto;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.134);
+    border: 2px solid white;
+    text-align: center;
+    padding: 15px;
   }
-  }
+}
 
-  :checked + label {
-    background: linear-gradient(0deg, #d20094 0%, #900080 67%)
-  }
+:checked + label {
+  background: linear-gradient(0deg, #d20094 0%, #900080 67%);
+}
 
-#nextQuestion{
+#nextQuestion {
   width: 100px;
   height: 50px;
   text-align: center;
   margin-top: 50px;
-}  
+}
 
-#questionCounter{
+#questionCounter {
   color: white;
   text-align: center;
   margin-top: 10rem;
 }
-#questionCounter span{
+#questionCounter span {
   color: rgb(198, 43, 226);
 }
 
-
 /*FEEDBACK PAGE*/
-.txtFeedbackSection h2{
+.txtFeedbackSection h2 {
   color: white;
   margin-top: 80px;
   text-align: center;
   font-size: 2.5rem;
 }
-.txtFeedbackSection p{
+.txtFeedbackSection p {
   color: white;
   text-align: center;
   font-size: 1.5rem;
@@ -190,7 +188,7 @@ input[type="radio"] {
   margin-inline: auto;
 }
 
-.ratingStars img{
+.ratingStars img {
   margin-top: 20px;
   opacity: 0.2;
   cursor: pointer;
@@ -200,36 +198,35 @@ input[type="radio"] {
   opacity: 1;
 }
 
-.commentArea p{
+.commentArea p {
   color: white;
   text-align: center;
   margin-top: 50px;
   font-size: 1.5rem;
 }
-.feedbackArea{
+.feedbackArea {
   width: 90%;
   text-align: center;
 }
-#feedbackText{
+#feedbackText {
   margin-top: 40px;
   height: 30px;
   width: 65%;
   resize: none;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid #C2128D;
+  border-bottom: 2px solid #c2128d;
   background: transparent;
   font-family: "Outfit", sans-serif;
   color: white;
   outline: none;
 }
 
-
-.infoBtn{
+.infoBtn {
   text-align: center;
   margin-top: 60px;
 }
-.infoBtn button{
+.infoBtn button {
   width: 200px;
   height: 60px;
   background-color: #00ffff;
@@ -241,7 +238,7 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-::placeholder{
+::placeholder {
   padding-left: 30px;
   font-size: 1rem;
 }
