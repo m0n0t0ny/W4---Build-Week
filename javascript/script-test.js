@@ -114,6 +114,8 @@ function loadQuestions() {
     answersDiv.appendChild(answerLabel);
     answers.appendChild(answersDiv);
   }
+  const input = document.querySelectorAll("input");
+  input.forEach((element) => {});
 }
 loadQuestions();
 
@@ -128,6 +130,12 @@ function nextQuestion() {
     document.getElementById("nextQuestion").remove();
     loadScore();
   }
+}
+
+//SCORE COUNT
+function loadScore() {
+  const answerId = document.getElementById();
+  if (questions.correct_answer === answerId) onclick = itemclicked(this.id);
 }
 
 //SCORE COUNT
