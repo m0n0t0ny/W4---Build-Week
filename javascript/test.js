@@ -137,9 +137,9 @@ function nextQuestion() {
     currentQuestion++;
     loadQuestions();
   } else {
-    document.getElementById("opt").remove();
-    document.getElementById("ques").remove();
-    document.getElementById("btn").remove();
+    document.getElementById("answerBox").remove();
+    document.getElementById("questionBox").remove();
+    document.getElementById("nextQuestion").remove();
     loadScore();
   }
 }
