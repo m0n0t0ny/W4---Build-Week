@@ -21,7 +21,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: space;
-  color: white;
+  color: #e7e7eb;
 }
 
 h1 {
@@ -47,6 +47,10 @@ main {
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
