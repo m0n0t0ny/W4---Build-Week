@@ -92,30 +92,30 @@ section div {
   margin-inline: auto;
 }
 
-#questionSection {
+#question-section {
   color: white;
   margin-top: 80px;
   text-align: center;
   font-size: 2.5rem;
 }
 
-#questionSection span {
+#question-section span {
   font-weight: 700;
 }
 
-#questionBox h2 {
+#question-box h2 {
   font-weight: 300;
   font-size: 2rem;
 }
 
-#answerBox {
+#answer-box {
   width: 90%;
   color: white;
   margin-top: 5rem;
   text-align: center;
 }
 
-#answerBox div {
+#answer-box div {
   width: 300px;
   height: 50px;
   display: inline-block;
@@ -130,7 +130,7 @@ section div {
 background: linear-gradient(0deg, #d20094 0%, #900080 67%);
 } */
 
-#answerBox p {
+#answer-box p {
   text-align: center;
   padding: 10px;
   font-family: "Inter", sans-serif;
@@ -159,20 +159,20 @@ input[type="radio"] {
   background: linear-gradient(0deg, #d20094 0%, #900080 67%);
 }
 
-#nextQuestion {
+#next-question {
   width: 100px;
   height: 50px;
   text-align: center;
   margin-top: 50px;
 }
 
-#questionCounter {
+#question-counter {
   color: white;
   text-align: center;
   margin-top: 10rem;
 }
 
-#questionCounter span {
+#question-counter span {
   color: rgb(198, 43, 226);
 }
 
@@ -217,7 +217,7 @@ input[type="radio"] {
   text-align: center;
 }
 
-#feedbackText {
+#feedback-text {
   margin-top: 40px;
   height: 30px;
   width: 65%;

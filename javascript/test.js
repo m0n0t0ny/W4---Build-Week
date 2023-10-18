@@ -99,8 +99,8 @@ let currentQuestion = 0;
 let score = 0;
 
 function loadQuestions() {
-  const h2 = document.querySelector("#questionBox h2");
-  const answers = document.getElementById("answerBox");
+  const h2 = document.querySelector("#question-box h2");
+  const answers = document.getElementById("answer-box");
 
   h2.innerText = questions[currentQuestion].question;
   answers.innerHTML = "";
@@ -127,9 +127,12 @@ function loadQuestions() {
     answersDiv.appendChild(answer);
     answersDiv.appendChild(answerLabel);
     answers.appendChild(answersDiv);
+
+    const questionCounter = document.getElementById("question-counter");
+    questionCounter.innerHTML = `<p>QUESTION &nbsp;${
+      currentQuestion + 1
+    } <span>/ ${questions.length}</span></p>`;
   }
-  const input = document.querySelectorAll("input");
-  input.forEach((element) => {});
 }
 loadQuestions();
 
@@ -139,9 +142,9 @@ function nextQuestion() {
     currentQuestion++;
     loadQuestions();
   } else {
-    document.getElementById("answerBox").remove();
-    document.getElementById("questionBox").remove();
-    document.getElementById("nextQuestion").remove();
+    document.getElementById("answer-box").remove();
+    document.getElementById("question-box").remove();
+    document.getElementById("next-question").remove();
     loadScore();
   }
 }
