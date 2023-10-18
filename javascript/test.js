@@ -1,17 +1,3 @@
-var timeLeft = 30;
-var elem = document.getElementById('Timer');
-
-var timerId = setInterval(countdown, 1000);
-
-function countdown() {
-  if (timeLeft == 0) {
-    clearInterval(timerId);
-    nextQuestion();
-  } else {
-    elem.innerHTML = timeLeft;
-    timeLeft--;
-  }
-}
 const questions = [
   {
     category: "Science: Computers",
@@ -19,11 +5,7 @@ const questions = [
     difficulty: "easy",
     question: "What does CPU stand for?",
     correct_answer: "Central Processing Unit",
-    incorrect_answers: [
-      "Central Process Unit",
-      "Computer Personal Unit",
-      "Central Processor Unit"
-    ]
+    incorrect_answers: ["Central Process Unit", "Computer Personal Unit", "Central Processor Unit"],
   },
   {
     category: "Science: Computers",
@@ -32,7 +14,7 @@ const questions = [
     question:
       "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
     correct_answer: "Final",
-    incorrect_answers: ["Static", "Private", "Public"]
+    incorrect_answers: ["Static", "Private", "Public"],
   },
   {
     category: "Science: Computers",
@@ -40,25 +22,23 @@ const questions = [
     difficulty: "easy",
     question: "The logo for Snapchat is a Bell.",
     correct_answer: "False",
-    incorrect_answers: ["True"]
+    incorrect_answers: ["True"],
   },
   {
     category: "Science: Computers",
     type: "boolean",
     difficulty: "easy",
-    question:
-      "Pointers were not used in the original C programming language; they were added later on in C++.",
+    question: "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
-    incorrect_answers: ["True"]
+    incorrect_answers: ["True"],
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the most preferred image format used for logos in the Wikimedia database?",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
     correct_answer: ".svg",
-    incorrect_answers: [".png", ".jpeg", ".gif"]
+    incorrect_answers: [".png", ".jpeg", ".gif"],
   },
   {
     category: "Science: Computers",
@@ -66,20 +46,15 @@ const questions = [
     difficulty: "easy",
     question: "In web design, what does CSS stand for?",
     correct_answer: "Cascading Style Sheet",
-    incorrect_answers: [
-      "Counter Strike: Source",
-      "Corrective Style Sheet",
-      "Computer Style Sheet"
-    ]
+    incorrect_answers: ["Counter Strike: Source", "Corrective Style Sheet", "Computer Style Sheet"],
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "What is the code name for the mobile operating system Android 7.0?",
+    question: "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
-    incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"]
+    incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
   },
   {
     category: "Science: Computers",
@@ -87,7 +62,7 @@ const questions = [
     difficulty: "easy",
     question: "On Twitter, what is the character limit for a Tweet?",
     correct_answer: "140",
-    incorrect_answers: ["120", "160", "100"]
+    incorrect_answers: ["120", "160", "100"],
   },
   {
     category: "Science: Computers",
@@ -95,17 +70,16 @@ const questions = [
     difficulty: "easy",
     question: "Linux was first created as an alternative to Windows XP.",
     correct_answer: "False",
-    incorrect_answers: ["True"]
+    incorrect_answers: ["True"],
   },
   {
     category: "Science: Computers",
     type: "multiple",
     difficulty: "easy",
-    question:
-      "Which programming language shares its name with an island in Indonesia?",
+    question: "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
-    incorrect_answers: ["Python", "C", "Jakarta"]
-  }
+    incorrect_answers: ["Python", "C", "Jakarta"],
+  },
 ];
 
 //QUIZ
@@ -119,9 +93,7 @@ function loadQuestions() {
   h2.innerText = questions[currentQuestion].question;
   answers.innerHTML = "";
   const question = questions[currentQuestion];
-  const totalAnswers = question.incorrect_answers.concat(
-    question.correct_answer
-  );
+  const totalAnswers = question.incorrect_answers.concat(question.correct_answer);
   console.log(totalAnswers);
 
   for (let i = 0; i < totalAnswers.length; i++) {
@@ -143,37 +115,50 @@ function loadQuestions() {
     answers.appendChild(answersDiv);
 
     const questionCounter = document.getElementById("question-counter");
-    questionCounter.innerHTML = `<p>QUESTION &nbsp;${
-      currentQuestion + 1
-    } <span>/ ${questions.length}</span></p>`;
+    questionCounter.innerHTML = `<p>QUESTION &nbsp;${currentQuestion + 1} <span>/ ${questions.length}</span></p>`;
   }
 }
 loadQuestions();
 
+//TIMER
+let timeLeft = 30;
+let elem = document.getElementById("timer");
+
+let timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  if (timeLeft == 0) {
+    clearInterval(timerId);
+    nextQuestion();
+  } else {
+    elem.innerHTML = timeLeft;
+    timeLeft--;
+  }
+}
+
 //NEXT QUESTION
 function resetTimer() {
-  timeLeft = 30; 
-  clearInterval(timerId); 
-  timerId = setInterval(countdown, 1000); 
+  timeLeft = 30;
+  clearInterval(timerId);
+  timerId = setInterval(countdown, 1000);
 }
 
 function nextQuestion() {
-
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
     loadQuestions();
-    resetTimer(); 
+    resetTimer();
   } else {
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
     document.getElementById("next-question").remove();
+    document.getElementById("timer").remove();
     loadScore();
   }
 }
 
 //SCORE COUNT
-function loadScore()
- {
+function loadScore() {
   const answerId = document.getElementById();
   if (questions.correct_answer === answerId) onclick = itemclicked(this.id);
 }
