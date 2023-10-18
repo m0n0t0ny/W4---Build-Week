@@ -174,7 +174,6 @@ function nextQuestion() {
     currentQuestion++;
     timer = 15;
     loadQuestions();
-    resetTimer();
   } else {
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
