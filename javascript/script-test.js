@@ -87,10 +87,10 @@ let currentQuestion = 0;
 let score = 0;
 
 function loadQuestions() {
-  const h1 = document.querySelector("#questionBox h1");
+  const h2 = document.querySelector("#questionBox h2");
   const answers = document.getElementById("answerBox");
 
-  h1.innerText = questions[currentQuestion].question;
+  h2.innerText = questions[currentQuestion].question;
   answers.innerHTML = "";
   const question = questions[currentQuestion];
   const totalAnswers = question.incorrect_answers.concat(question.correct_answer);
@@ -116,6 +116,19 @@ function loadQuestions() {
   }
 }
 loadQuestions();
+
+//NEXT QUESTION
+function nextQuestion() {
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    loadQuestions();
+  } else {
+    document.getElementById("opt").remove();
+    document.getElementById("ques").remove();
+    document.getElementById("btn").remove();
+    loadScore();
+  }
+}
 
 //SCORE COUNT
 
