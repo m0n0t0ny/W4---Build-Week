@@ -1,4 +1,3 @@
-
 var timeLeft = 30;
 var elem = document.getElementById('Timer');
 
@@ -8,11 +7,12 @@ function countdown() {
   if (timeLeft == 0) {
     clearTimeout(timerId);
     doSomething();
-  } else {
+}else {
     elem.innerHTML = timeLeft ;
     timeLeft--;
   }
-}const questions = [
+}
+const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -151,10 +151,18 @@ function loadQuestions() {
 loadQuestions();
 
 //NEXT QUESTION
+function resetTimer() {
+  timeLeft = 30; 
+  clearInterval(timerId); 
+  timerId = setInterval(countdown, 1000); 
+}
+
 function nextQuestion() {
+
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
     loadQuestions();
+    resetTimer(); 
   } else {
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
@@ -164,7 +172,8 @@ function nextQuestion() {
 }
 
 //SCORE COUNT
-function loadScore() {
+function loadScore()
+ {
   const answerId = document.getElementById();
   if (questions.correct_answer === answerId) onclick = itemclicked(this.id);
 }
