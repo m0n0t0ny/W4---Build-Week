@@ -18,7 +18,7 @@ body {
   height: 100vh;
   margin-inline: auto;
   font-family: "Outfit", sans-serif;
-  background-image: url(./bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: space;
@@ -91,12 +91,14 @@ section div {
   width: 500px;
   margin-inline: auto;
 }
+
 #questionSection {
   color: white;
   margin-top: 80px;
   text-align: center;
   font-size: 2.5rem;
 }
+
 #questionSection span {
   font-weight: 700;
 }
@@ -112,6 +114,7 @@ section div {
   margin-top: 5rem;
   text-align: center;
 }
+
 #answerBox div {
   width: 300px;
   height: 50px;
@@ -168,17 +171,20 @@ input[type="radio"] {
   text-align: center;
   margin-top: 10rem;
 }
+
 #questionCounter span {
   color: rgb(198, 43, 226);
 }
 
 /*FEEDBACK PAGE*/
+
 .txtFeedbackSection h2 {
   color: white;
   margin-top: 80px;
   text-align: center;
   font-size: 2.5rem;
 }
+
 .txtFeedbackSection p {
   color: white;
   text-align: center;
@@ -193,6 +199,7 @@ input[type="radio"] {
   opacity: 0.2;
   cursor: pointer;
 }
+
 .ratingStars img.active {
   margin-top: 20px;
   opacity: 1;
@@ -204,10 +211,12 @@ input[type="radio"] {
   margin-top: 50px;
   font-size: 1.5rem;
 }
+
 .feedbackArea {
   width: 90%;
   text-align: center;
 }
+
 #feedbackText {
   margin-top: 40px;
   height: 30px;
@@ -226,6 +235,7 @@ input[type="radio"] {
   text-align: center;
   margin-top: 60px;
 }
+
 .infoBtn button {
   width: 200px;
   height: 60px;

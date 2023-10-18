@@ -96,8 +96,6 @@ main {
   position: absolute;
   height: 70%;
   width: 70%;
-  background-image: url(../temp/image10.png);
-  background-size: contain;
   border-radius: 50%;
 }
 
