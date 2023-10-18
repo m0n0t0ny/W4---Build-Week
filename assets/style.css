@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 *,
 *::after,
@@ -35,6 +36,7 @@ h3 {
 h5 {
   font-size: 1.5rem;
   font-weight: 400;
+  object-fit: cover;
 }
 
 header {
@@ -76,4 +78,170 @@ button {
 
 .block {
   display: block;
+}
+
+header img{
+  width: 200px;
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+
+/*QUIZ PAGE*/
+section div{
+  width: 500px;
+  margin-inline: auto;
+}
+#questionSection{
+  color: white;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+#questionSection span{
+  font-weight: 700;
+}
+
+#questionBox h2{
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+#answerBox{
+  width: 90%;
+  color: white;
+  margin-top: 5rem;
+  text-align: center;
+}
+#answerBox div{
+  width: 300px;
+  height: 50px;
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  margin-inline: auto;
+  margin: 10px;
+}
+
+/*:hover{
+background: linear-gradient(0deg, #d20094 0%, #900080 67%);
+} */
+
+#answerBox p{
+  text-align: center;
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  display: none;
++ label {
+  width: 300px;
+  height: 50px ;
+  display: inline-block;
+  margin-inline: auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.134);
+  border: 2px solid white;
+  text-align: center;
+  padding: 15px;
+  }
+  }
+
+  :checked + label {
+    background: linear-gradient(0deg, #d20094 0%, #900080 67%)
+  }
+
+#nextQuestion{
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  margin-top: 50px;
+}  
+
+#questionCounter{
+  color: white;
+  text-align: center;
+  margin-top: 10rem;
+}
+#questionCounter span{
+  color: rgb(198, 43, 226);
+}
+
+
+/*FEEDBACK PAGE*/
+.txtFeedbackSection h2{
+  color: white;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.txtFeedbackSection p{
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  width: 600px;
+  margin-inline: auto;
+}
+
+.ratingStars img{
+  margin-top: 20px;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.ratingStars img.active {
+  margin-top: 20px;
+  opacity: 1;
+}
+
+.commentArea p{
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.5rem;
+}
+.feedbackArea{
+  width: 90%;
+  text-align: center;
+}
+#feedbackText{
+  margin-top: 40px;
+  height: 30px;
+  width: 65%;
+  resize: none;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #C2128D;
+  background: transparent;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  outline: none;
+}
+
+
+.infoBtn{
+  text-align: center;
+  margin-top: 60px;
+}
+.infoBtn button{
+  width: 200px;
+  height: 60px;
+  background-color: #00ffff;
+  border: none;
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  box-shadow: 1px 0px 8px 3px #00ffff98;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+::placeholder{
+  padding-left: 30px;
+  font-size: 1rem;
 }

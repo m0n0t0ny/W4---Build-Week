@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Epicode - Exam</title>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
@@ -11,13 +11,23 @@
       <img src="./assets/epicode_logo.png" alt="logo epicode" />
     </header>
     <main>
-      <h2>Here's the <span>question</span></h2>
-      <div>
-        <p>Answers box</p>
-      </div>
-      <div>
-        <p>Question counter</p>
-      </div>
+      <section id="questionSection">
+        <div id="questionBox">
+          <h2></h2>
+        </div>
+      </section>
+
+      <section>
+        <div id="answerBox"></div>
+        <button id="nextQuestion" onclick="nextQuestion()">Next</button>
+      </section>
+
+      <section>
+        <div id="questionCounter">
+          <p>QUESTION COUNTER 1 <span>/ 10</span></p>
+        </div>
+      </section>
     </main>
+    <script src="./javascript/script-test.js"></script>
   </body>
 </html>
