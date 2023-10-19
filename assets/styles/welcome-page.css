@@ -4,7 +4,7 @@ body {
   background-size: cover;
   background-position: center;
   color: white;
-  margin-left: 300px;
+  margin-left: 100px;
 }
 
 .container {
@@ -92,7 +92,7 @@ ul {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-left: 900px;
+  margin-left: 700px;
   margin-bottom: 170px;
 }
 
