@@ -110,7 +110,7 @@ let totalQuestions = questions.length;
 function getScore() {
   correctAnswers = [];
   incorrectAnswers = [];
-  for (let i = 0; i < questions.length; i++) {
+  for (let i = 0; i < totalQuestions; i++) {
     if (givenAnswers[i] === questions[i].correct_answer) {
       correctAnswers.push(givenAnswers[i]);
     } else {
@@ -159,10 +159,8 @@ function loadQuestions() {
   answerButton.forEach((element) => {
     element.addEventListener("click", () => {
       const label = document.querySelector(`label[for="${element.id}"]`);
-      if (label) {
-        givenAnswers.push(label.textContent);
-        nextQuestion();
-      }
+      givenAnswers.push(label.textContent);
+      nextQuestion();
     });
   });
 
@@ -195,6 +193,8 @@ function nextQuestion() {
 
     // console.log("Correct Answers:", correctAnswers);
   } else {
+    getScore();
+
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
     document.getElementById("next-question").remove();
@@ -205,10 +205,7 @@ function nextQuestion() {
     console.log("correctAnswers:", correctAnswers);
     console.log("incorrectAnswers:", incorrectAnswers);
 
-    getScore();
     loadDonutWheel();
-
-    // console.log("Incorrect Answers:", incorrectAnswers);
   }
 }
 
@@ -216,11 +213,14 @@ const loadDonutWheel = () => {
   const svg = document.getElementById("donut-2");
   const circleSegment = svg.querySelector(".donut-segment-2");
 
+  let correctAnswerslength = correctAnswers.length;
+  let wrongAnswers = totalQuestions - correctAnswerslength;
+
   const correctAnswersPercentage = () => {
-    return (correctAnswers.length / totalQuestions) * 100;
+    return (correctAnswerslength / totalQuestions) * 100;
   };
   const wrongAnswersPercentage = () => {
-    return (incorrectAnswers.length / totalQuestions) * 100;
+    return (wrongAnswers / totalQuestions) * 100;
   };
 
   const correctScore = document.getElementById("correctScore");
@@ -229,28 +229,26 @@ const loadDonutWheel = () => {
   wrongScore.innerText = wrongAnswersPercentage().toFixed(2) + "%";
 
   const answeredRight = document.getElementById("answered-right");
-  answeredRight.innerText = `${correctAnswers.length}/${totalQuestions} questions`;
+  answeredRight.innerText = `${correctAnswerslength}/${totalQuestions} questions`;
   const answeredWrong = document.getElementById("answered-wrong");
-  answeredWrong.innerText = `${incorrectAnswers.length}/${totalQuestions}  questions`;
+  answeredWrong.innerText = `${wrongAnswers}/${totalQuestions}  questions`;
 
   const feedback = document.getElementById("feedback");
 
   const passed = `<h5 id="final-evaluation" class="t-align-cen">Congratulations!
-<span class="cyan block">You passed the exam.</span></h5><p id="valutation" class="t-align-cen">We'll send you the certificate in few minutes.<br />Check your
-email (including promotions/spam folder)</p>`;
+  <span class="cyan block">You passed the exam.</span></h5><p id="valutation" class="t-align-cen">We'll send you the certificate in few minutes.<br />Check your
+  email (including promotions/spam folder)</p>`;
   const failed = `<h5 id="final-evaluation" class="t-align-cen">Unfortunately
-<span class="magenta block">you didn't pass the exam.</span></h5><p id="valutation" class="t-align-cen">While you didn't pass this time this is an opportunity to identify areas where you can improve.</p>`;
+  <span class="magenta block">you didn't pass the exam.</span></h5><p id="valutation" class="t-align-cen">While you didn't pass this time this is an opportunity to identify areas where you can improve.</p>`;
 
   let passedOrFailed = correctAnswersPercentage() > 60 ? passed : failed;
   feedback.innerHTML = passedOrFailed;
 
-  // * DONUT CHART 🍩
-
   const donutChartValues = {
     dasharrayStart: 0,
-    dasharrayEnd: correctAnswers.length,
-    complementValue: totalQuestions - correctAnswers.length,
-    strokeDasharray: `${incorrectAnswers.length} ${correctAnswers.length}`
+    dasharrayEnd: correctAnswersPercentage(),
+    complementValue: wrongAnswersPercentage(),
+    strokeDasharray: `${wrongAnswersPercentage()} ${correctAnswersPercentage()}`
   };
 
   circleSegment.style.setProperty(
