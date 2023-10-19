@@ -41,15 +41,28 @@
         <li>this exam will take approx.<strong>0-5 minutes.</strong></li>
       </ul>
     </div>
+    <div id="myModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <button onclick="selectLevel('facile')">Facile</button>
+        <button onclick="selectLevel('medio')">Medio</button>
+        <button onclick="selectLevel('difficile')">Difficile</button>
+        <input type="number" id="numberInput" placeholder="Numero domande" />
+        <button onclick="proceed()">Procedi</button>
+      </div>
+    </div>
+
     <div class="checkbox-container">
       <label class="custom-checkbox">
-        <input type="checkbox" id="terms" name="terms" />
+        <input type="checkbox" id="terms" name="terms" onchange="toggleButton()" />
         <span class="checkmark"></span>
       </label>
-      <label for="terms">I promise to answer myself without help from anyone</label>
+      <label for="terms">Prometto di rispondere da solo senza aiuto da nessuno</label>
     </div>
+
     <div class="button-container">
-      <a href="./test-page.html" class="btn" onclick="proceedClicked()"><strong>PROCEED</strong></a>
+      <button id="proceedBtn" class="btn" onclick="proceedClicked()" disabled><strong>PROCEED</strong></button>
     </div>
+    <script src="./javascript/welcome.js"></script>
   </body>
 </html>
