@@ -270,4 +270,11 @@ const loadDonutWheel = () => {
     "stroke-dasharray",
     donutChartValues.strokeDasharray
   );
+
+  function leaveAFeedback() {
+    window.location.href = "feedback.html";
+  }
+
+  const resultsRateUs = document.getElementById("results-rate-us");
+  resultsRateUs.addEventListener("click", leaveAFeedback);
 };

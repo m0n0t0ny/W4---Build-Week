@@ -1,5 +1,5 @@
 //STARS RATING
-const stars = document.querySelectorAll(".ratingStars img");
+const stars = document.querySelectorAll(".rating-stars img");
 
 stars.forEach((star, index1) => {
   star.addEventListener("click", () => {
