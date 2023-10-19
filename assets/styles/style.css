@@ -79,9 +79,53 @@ button {
 }
 
 header img {
-  width: 200px;
-  margin-top: 40px;
-  margin-left: 60px;
+  height: 2.6rem;
+  margin: 3rem 0 1rem 0;
+}
+
+.timer-container {
+  position: relative;
+  right: 7rem;
+  width: 10rem;
+  height: 10rem;
+  margin: -3rem 0 0 auto;
+}
+
+#donut-1 {
+  position: absolute;
+}
+
+.donut-ring-1 {
+  stroke: #ffffff50;
+}
+
+.donut-segment-1 {
+  stroke: #00ffff;
+  animation: donut1 3s;
+}
+
+.donut-percent-1 {
+  animation: donutfadelong 1s;
+}
+
+@keyframes donut1 {
+  0% {
+    stroke-dasharray: 100 0;
+  }
+  100% {
+    stroke-dasharray: var(--complementValue) var(--dasharrayEnd);
+  }
+}
+
+#timer {
+  text-align: center;
+  padding: 2.85rem 0;
+  font-size: 0.6rem;
+}
+
+#time-left {
+  font-size: 3rem;
+  line-height: 0.9;
 }
 
 /* QUIZ PAGE */
@@ -159,10 +203,7 @@ input[type="radio"] {
 }
 
 #next-question {
-  width: 100px;
-  height: 50px;
-  text-align: center;
-  margin-top: 50px;
+  display: none;
 }
 
 #question-counter {

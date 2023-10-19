@@ -140,38 +140,30 @@ main {
   transition: all 0.2s ease-in-out;
 }
 
-.donut-chart {
+/* .donut-chart {
   width: 100%;
   margin: 0 auto;
   animation: donutfade 1s;
-}
+} */
 
-.donut-ring {
+.donut-ring-2 {
   stroke: #c2128d;
 }
 
 .donut-segment-2 {
   stroke: #00ffff;
-  animation: donut1 3s;
+  animation: donut2 3s;
 }
 
-.segment-2 {
-  fill: #00ffff;
-}
-
-.donut-percent {
+.donut-percent-2 {
   animation: donutfadelong 1s;
 }
 
-@keyframes donut1 {
+@keyframes donut2 {
   0% {
     stroke-dasharray: 100 0;
   }
   100% {
     stroke-dasharray: var(--complementValue) var(--dasharrayEnd);
   }
-}
-
-.donut-data {
-  animation: donutfadelong 1s;
 }

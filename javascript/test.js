@@ -1,3 +1,4 @@
+ HEAD
 
 var timeLeft = 30;
 var elem = document.getElementById('Timer');
@@ -13,6 +14,7 @@ function countdown() {
     timeLeft--;
   }
 }
+c17d0cedfa5815dae39923c92f0d12c898db033d
 const questions = [
   {
     category: "Science: Computers",
@@ -109,9 +111,14 @@ const questions = [
   }
 ];
 
-//QUIZ
+// QUIZ ✅
 let currentQuestion = 0;
 let score = 0;
+
+let givenAnswers = [];
+
+let timer = 15;
+let interval = 1;
 
 function loadQuestions() {
   const h2 = document.querySelector("#question-box h2");
@@ -123,7 +130,6 @@ function loadQuestions() {
   const totalAnswers = question.incorrect_answers.concat(
     question.correct_answer
   );
-  console.log(totalAnswers);
 
   for (let i = 0; i < totalAnswers.length; i++) {
     const answersDiv = document.createElement("div");
@@ -148,50 +154,94 @@ function loadQuestions() {
       currentQuestion + 1
     } <span>/ ${questions.length}</span></p>`;
   }
+
+  const answerButton = document.querySelectorAll("input");
+
+  answerButton.forEach((element) => {
+    element.addEventListener("click", () => {
+      const label = document.querySelector(`label[for="${element.id}"]`);
+      if (label) {
+        givenAnswers.push(label.textContent);
+        nextQuestion();
+      }
+    });
+  });
+
+  // TIMER ⌚
+  function updateTimer() {
+    const countdown = document.getElementById("timer");
+    countdown.innerHTML = `<p>SECONDS <div id="time-left">${timer}</div> REMAINING</p>`;
+    if (timer <= 0) {
+      clearInterval(interval);
+      givenAnswers.push("overtime");
+      nextQuestion();
+    }
+    timer--;
+  }
+  interval = setInterval(updateTimer, 1000);
 }
+
 loadQuestions();
 
-//NEXT QUESTION
-function resetTimer() {
-  timeLeft = 30; 
-  clearInterval(timerId); 
-  timerId = setInterval(countdown, 1000); 
-}
+// NEXT QUESTION ❓
 
 function nextQuestion() {
-
+  clearInterval(interval);
   if (currentQuestion < questions.length - 1) {
     currentQuestion++;
+    timer = 15;
     loadQuestions();
-    resetTimer(); 
   } else {
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
     document.getElementById("next-question").remove();
-    loadScore();
+    getScore();
+    window.location.href = "results.html";
   }
+  console.log("givenAnswers:", givenAnswers);
 }
 
-//SCORE COUNT
-function loadScore()
- {
-  const answerId = document.getElementById();
-  if (questions.correct_answer === answerId) onclick = itemclicked(this.id);
+//GET YOUR SCORE
+const correctAnswers = [];
+const incorrectAnswers = [];
+
+function getScore() {
+  for (let i = 0; i < questions.length; i++) {
+    if (givenAnswers[i] === questions[i].correct_answer) {
+      correctAnswers.push();
+    } else {
+      incorrectAnswers.push();
+    }
+  }
+  // return correctAnswers.length
 }
 
-//SCORE COUNT
+console.log(correctAnswers.length);
 
-//QUESTIONS COUNT
+// * DONUT CHART 🍩
+const donutChartValues = {
+  dasharrayStart: 0,
+  dasharrayEnd: correctAnswersPercentage(),
+  complementValue: wrongAnswersPercentage(),
+  strokeDasharray: `${wrongAnswersPercentage()} ${correctAnswersPercentage()}`
+};
 
-// TIPS:
-// SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
-// Per ogni domanda, crea un container e incorporale tutte all'interno.
-// Crea poi dei radio button
-// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-// con le risposte corrette e incorrette come opzioni
-// (dovrai probabilmente cercare su un motore di ricerca come ottenere un valore da un radio button in JS per ottenere il punteggio finale)
-//
-// SE MOSTRI UNA DOMANDA ALLA VOLTA:
-// Mostra la prima domanda con il testo e i radio button.
-// Quando l'utente seleziona una risposta, passa alla domanda successiva dell'array e sostituisci quella precedentemente visualizzata con quella corrente,
-// salvando le risposte dell'utente in una variabile
+circleSegment.style.setProperty(
+  "--dasharrayStart",
+  donutChartValues.dasharrayStart
+);
+
+circleSegment.style.setProperty(
+  "--dasharrayEnd",
+  donutChartValues.dasharrayEnd
+);
+
+circleSegment.style.setProperty(
+  "--complementValue",
+  donutChartValues.complementValue
+);
+
+circleSegment.setAttribute(
+  "stroke-dasharray",
+  donutChartValues.strokeDasharray
+);
