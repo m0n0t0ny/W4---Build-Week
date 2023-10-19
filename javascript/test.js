@@ -1,20 +1,3 @@
- HEAD
-
-var timeLeft = 30;
-var elem = document.getElementById('Timer');
-
-var timerId = setInterval(countdown, 1000);
-
-function countdown() {
-  if (timeLeft == 0) {
-    clearInterval(timerId);
-    nextQuestion();
-  } else {
-    elem.innerHTML = timeLeft;
-    timeLeft--;
-  }
-}
-c17d0cedfa5815dae39923c92f0d12c898db033d
 const questions = [
   {
     category: "Science: Computers",

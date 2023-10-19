@@ -1,24 +1,23 @@
 function proceedClicked() {
-    let modal = document.getElementById("myModal");
-    modal.style.display = "block";
-  }
+  let modal = document.getElementById("myModal");
+  modal.style.display = "block";
+}
 
-  function closeModal() {
-    let modal = document.getElementById("myModal");
-    modal.style.display = "none";
-  }
+function closeModal() {
+  let modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
 
-  function proceed() {
+function proceed() {
+  window.location.href = "./test.html";
+}
 
-    window.location.href = "./test-page.html";
+function toggleButton() {
+  let checkbox = document.getElementById("terms");
+  let button = document.getElementById("proceedBtn");
+  if (checkbox.checked) {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
   }
-
-  function toggleButton() {
-    let checkbox = document.getElementById("terms");
-    let button = document.getElementById("proceedBtn");
-    if (checkbox.checked) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
-  }
+}
