@@ -131,7 +131,7 @@ header img {
 /* QUIZ PAGE */
 
 section div {
-  width: 500px;
+  width: fit-content;
   margin-inline: auto;
 }
 
