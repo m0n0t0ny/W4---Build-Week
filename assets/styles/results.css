@@ -1,5 +1,17 @@
 /* * Results Page */
 
+#results-html {
+  display: none;
+}
+
+.displayNone {
+  display: none;
+}
+
+.display {
+  display: unset !important;
+}
+
 header img {
   height: 2.6rem;
   margin: 3rem 0 1rem 7rem;

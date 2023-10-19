@@ -94,14 +94,30 @@ const questions = [
   }
 ];
 
-// QUIZ ✅
-let currentQuestion = 0;
-let score = 0;
+const testHtml = document.getElementById("test-html");
+const resultsHtml = document.getElementById("results-html");
 
+let currentQuestion = 0;
 let givenAnswers = [];
 
 let timer = 15;
-let interval = 1;
+let interval = null;
+
+let correctAnswers = [];
+let incorrectAnswers = [];
+let totalQuestions = questions.length;
+
+function getScore() {
+  correctAnswers = [];
+  incorrectAnswers = [];
+  for (let i = 0; i < questions.length; i++) {
+    if (givenAnswers[i] === questions[i].correct_answer) {
+      correctAnswers.push(givenAnswers[i]);
+    } else {
+      incorrectAnswers.push(givenAnswers[i]);
+    }
+  }
+}
 
 function loadQuestions() {
   const h2 = document.querySelector("#question-box h2");
@@ -174,57 +190,86 @@ function nextQuestion() {
     currentQuestion++;
     timer = 15;
     loadQuestions();
+
+    getScore();
+
+    // console.log("Correct Answers:", correctAnswers);
   } else {
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
     document.getElementById("next-question").remove();
+    testHtml.classList.add("displayNone");
+    resultsHtml.classList.add("display");
+
+    console.log("totalQuestions:", totalQuestions);
+    console.log("correctAnswers:", correctAnswers);
+    console.log("incorrectAnswers:", incorrectAnswers);
+
     getScore();
-    window.location.href = "results.html";
+    loadDonutWheel();
+
+    // console.log("Incorrect Answers:", incorrectAnswers);
   }
-  console.log("givenAnswers:", givenAnswers);
 }
 
-//GET YOUR SCORE
-const correctAnswers = [];
-const incorrectAnswers = [];
+const loadDonutWheel = () => {
+  const svg = document.getElementById("donut-2");
+  const circleSegment = svg.querySelector(".donut-segment-2");
 
-function getScore() {
-  for (let i = 0; i < questions.length; i++) {
-    if (givenAnswers[i] === questions[i].correct_answer) {
-      correctAnswers.push();
-    } else {
-      incorrectAnswers.push();
-    }
-  }
-  // return correctAnswers.length
-}
+  const correctAnswersPercentage = () => {
+    return (correctAnswers.length / totalQuestions) * 100;
+  };
+  const wrongAnswersPercentage = () => {
+    return (incorrectAnswers.length / totalQuestions) * 100;
+  };
 
-console.log(correctAnswers.length);
+  const correctScore = document.getElementById("correctScore");
+  correctScore.innerText = correctAnswersPercentage().toFixed(2) + "%";
+  const wrongScore = document.getElementById("wrongScore");
+  wrongScore.innerText = wrongAnswersPercentage().toFixed(2) + "%";
 
-// * DONUT CHART 🍩
-const donutChartValues = {
-  dasharrayStart: 0,
-  dasharrayEnd: correctAnswersPercentage(),
-  complementValue: wrongAnswersPercentage(),
-  strokeDasharray: `${wrongAnswersPercentage()} ${correctAnswersPercentage()}`
+  const answeredRight = document.getElementById("answered-right");
+  answeredRight.innerText = `${correctAnswers.length}/${totalQuestions} questions`;
+  const answeredWrong = document.getElementById("answered-wrong");
+  answeredWrong.innerText = `${incorrectAnswers.length}/${totalQuestions}  questions`;
+
+  const feedback = document.getElementById("feedback");
+
+  const passed = `<h5 id="final-evaluation" class="t-align-cen">Congratulations!
+<span class="cyan block">You passed the exam.</span></h5><p id="valutation" class="t-align-cen">We'll send you the certificate in few minutes.<br />Check your
+email (including promotions/spam folder)</p>`;
+  const failed = `<h5 id="final-evaluation" class="t-align-cen">Unfortunately
+<span class="magenta block">you didn't pass the exam.</span></h5><p id="valutation" class="t-align-cen">While you didn't pass this time this is an opportunity to identify areas where you can improve.</p>`;
+
+  let passedOrFailed = correctAnswersPercentage() > 60 ? passed : failed;
+  feedback.innerHTML = passedOrFailed;
+
+  // * DONUT CHART 🍩
+
+  const donutChartValues = {
+    dasharrayStart: 0,
+    dasharrayEnd: correctAnswers.length,
+    complementValue: totalQuestions - correctAnswers.length,
+    strokeDasharray: `${incorrectAnswers.length} ${correctAnswers.length}`
+  };
+
+  circleSegment.style.setProperty(
+    "--dasharrayStart",
+    donutChartValues.dasharrayStart
+  );
+
+  circleSegment.style.setProperty(
+    "--dasharrayEnd",
+    donutChartValues.dasharrayEnd
+  );
+
+  circleSegment.style.setProperty(
+    "--complementValue",
+    donutChartValues.complementValue
+  );
+
+  circleSegment.setAttribute(
+    "stroke-dasharray",
+    donutChartValues.strokeDasharray
+  );
 };
-
-circleSegment.style.setProperty(
-  "--dasharrayStart",
-  donutChartValues.dasharrayStart
-);
-
-circleSegment.style.setProperty(
-  "--dasharrayEnd",
-  donutChartValues.dasharrayEnd
-);
-
-circleSegment.style.setProperty(
-  "--complementValue",
-  donutChartValues.complementValue
-);
-
-circleSegment.setAttribute(
-  "stroke-dasharray",
-  donutChartValues.strokeDasharray
-);
