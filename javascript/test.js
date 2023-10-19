@@ -123,7 +123,7 @@ function loadQuestions() {
   const h2 = document.querySelector("#question-box h2");
   const answers = document.getElementById("answer-box");
 
-  h2.innerText = questions[currentQuestion].question;
+  h2.innerHTML = questions[currentQuestion].question;
   answers.innerHTML = "";
   const question = questions[currentQuestion];
   const totalAnswers = question.incorrect_answers.concat(
