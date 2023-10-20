@@ -319,7 +319,7 @@ button {
   }
 }
 
-:checked + label {
+:hover + label {
   background: linear-gradient(0deg, #d20094 0%, #900080 67%);
 }
 
