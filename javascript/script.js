@@ -38,6 +38,7 @@ function test() {
     const correctAnswersPercentage = () => {
       return (correctAnswerslength / totalQuestions) * 100;
     };
+
     const wrongAnswersPercentage = () => {
       return (wrongAnswers / totalQuestions) * 100;
     };
@@ -60,7 +61,7 @@ function test() {
     const failed = `<h5 id="final-evaluation" class="t-align-cen">Unfortunately
   <span class="magenta block">you didn't pass the exam.</span></h5><p id="valutation" class="t-align-cen">While you didn't pass this time this is an opportunity to identify areas where you can improve.</p>`;
 
-    let passedOrFailed = correctAnswersPercentage() > 60 ? passed : failed;
+    let passedOrFailed = correctAnswersPercentage() >= 60 ? passed : failed;
     feedback.innerHTML = passedOrFailed;
 
     const donutChartValues = {
@@ -223,7 +224,6 @@ function test() {
     interval = setInterval(updateTimer, 1000);
     const timerContainer = document.querySelector(".timer-container");
     const donut1 = document.querySelector("#donut-1");
-    donut1.classList.add(".donut-1");
     timerContainer.removeChild(donut1);
     timerContainer.appendChild(donut1);
 
@@ -256,6 +256,11 @@ function test() {
     const totalAnswers = question.incorrect_answers.concat(
       question.correct_answer
     );
+
+    for (let i = totalAnswers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [totalAnswers[i], totalAnswers[j]] = [totalAnswers[j], totalAnswers[i]];
+    }
 
     for (let i = 0; i < totalAnswers.length; i++) {
       const answersDiv = document.createElement("p");

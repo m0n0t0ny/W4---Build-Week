@@ -200,14 +200,15 @@ button {
 
 #test-page .top .timer-container {
   position: relative;
-  top: -0.5rem;
-  right: 5.8rem;
   width: 10rem;
   height: 9rem;
+  top: -0.5rem;
+  right: 5.8rem;
   margin: -4rem -7rem 0 auto;
 }
 
 #donut-1 {
+  filter: drop-shadow(5px 5px 20px rgb(0 0 0 / 0.75));
   transform-origin: center;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -236,8 +237,10 @@ button {
 }
 
 #timer {
+  position: absolute;
+  top: 2.5rem;
+  right: 3.6rem;
   text-align: center;
-  margin-top: -6.7rem;
   font-size: 0.6rem;
 }
 
@@ -419,7 +422,7 @@ button {
 
 #feedback p {
   margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 #results-page .center .magenta {
@@ -433,16 +436,17 @@ button {
 }
 
 #donut-2 {
+  filter: drop-shadow(5px 5px 20px rgb(0 0 0 / 0.75));
   position: absolute;
   width: 100%;
 }
 
 #results-page .donut-ring-2 {
-  stroke: #c2128d;
+  stroke: #00ffff;
 }
 
 #results-page .donut-segment-2 {
-  stroke: #00ffff;
+  stroke: #c2128d;
   animation: donut2 3s;
 }
 
