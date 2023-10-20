@@ -3,6 +3,7 @@ const testPage = document.getElementById("test-page");
 const resultsPage = document.getElementById("results-page");
 const feedbackPage = document.getElementById("feedback-page");
 const timerContainer = document.getElementById("timer-container");
+const countdown = document.getElementById("timer");
 
 // ! ---------- Index 🏠
 
@@ -97,6 +98,8 @@ function test() {
       feedbackPage.classList.toggle("hide");
     }
   };
+
+  // Questions
 
   const questions = [
     {
@@ -194,9 +197,6 @@ function test() {
     }
   ];
 
-  const testHtml = document.getElementById("test-html");
-  const resultsHtml = document.getElementById("results-html");
-
   let currentQuestion = 0;
   let givenAnswers = [];
 
@@ -220,6 +220,13 @@ function test() {
   }
 
   function loadQuestions() {
+    interval = setInterval(updateTimer, 1000);
+    const timerContainer = document.querySelector(".timer-container");
+    const donut1 = document.querySelector("#donut-1");
+    donut1.classList.add(".donut-1");
+    timerContainer.removeChild(donut1);
+    timerContainer.appendChild(donut1);
+
     const h3 = document.querySelector("#question-box h3");
     const answers = document.getElementById("answer-box");
 
@@ -285,33 +292,37 @@ function test() {
     });
 
     // Timer ⌚
+
     function updateTimer() {
-      const countdown = document.getElementById("timer");
-      countdown.innerHTML = `<p>SECONDS <div id="time-left">${timer}</div> REMAINING</p>`;
       if (timer <= 0) {
+        timer = 15;
         clearInterval(interval);
         givenAnswers.push("overtime");
+        countdown.innerHTML = `<p>SECONDS</p> <div id="time-left">${timer}</div> <p>REMAINING</p>`;
         nextQuestion();
+      } else {
+        countdown.innerHTML = `<p>SECONDS</p> <div id="time-left">${timer}</div> <p>REMAINING</p>`;
       }
+
       timer--;
     }
-    interval = setInterval(updateTimer, 1000);
   }
 
   loadQuestions();
+  countdown.innerHTML = `<p>SECONDS</p> <div id="time-left">${timer}</div> <p>REMAINING</p>`;
 
-  // Next Question ❓
+  // Next Question ❔
 
   function nextQuestion() {
     clearInterval(interval);
     if (currentQuestion < questions.length - 1) {
       currentQuestion++;
       timer = 15;
+      clearInterval(interval);
+      countdown.innerHTML = `<p>SECONDS</p> <div id="time-left">${timer}</div> <p>REMAINING</p>`;
+
       loadQuestions();
-
       getScore();
-
-      // console.log("Correct Answers:", correctAnswers);
     } else {
       getScore();
 

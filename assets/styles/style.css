@@ -200,9 +200,10 @@ button {
 
 #test-page .top .timer-container {
   position: relative;
-  right: 7rem;
+  top: -0.5rem;
+  right: 5.8rem;
   width: 10rem;
-  height: 10rem;
+  height: 9rem;
   margin: -4rem -7rem 0 auto;
 }
 
@@ -220,7 +221,7 @@ button {
 
 #test-page .donut-segment-1 {
   stroke: #00ffff;
-  animation: donut1 15s linear;
+  animation: donut1 16s linear;
   transform-origin: center;
   transform: rotate(-90deg);
 }
@@ -236,13 +237,17 @@ button {
 
 #timer {
   text-align: center;
-  margin-top: -8rem;
+  margin-top: -6.7rem;
   font-size: 0.6rem;
 }
 
+#timer p {
+  font-size: 0.5rem;
+}
+
 #time-left {
-  font-size: 3rem;
-  line-height: 0.9;
+  font-size: 2.8rem;
+  line-height: 0.95;
 }
 
 /* q&a ❔❕ */
