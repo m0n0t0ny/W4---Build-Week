@@ -342,130 +342,90 @@ button {
 
 /* ! ---------- Results Page 💯 */
 
-/* .title h1 {
-  font-size: 3.75rem;
+#results-page .top {
+  text-align: center;
 }
 
-.title h5 {
-  font-size: 1.75rem;
-  font-weight: 200;
-  margin-top: -0.5rem;
-  letter-spacing: 1px;
-} */
-
-#results-page .scores-overview {
-  margin: 6rem 0;
+#results-page .top h3 {
+  font-size: 3.65rem;
 }
 
-#results-page .scores-overview .score-percentage h3:nth-of-type(1) {
-  font-size: 4rem;
+#results-page .top h5 {
+  margin-top: -0.45rem;
+  font-size: 1.9rem;
+}
+
+#results-page .center {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+#results-page .center .score-percentage {
+  display: inline-block;
+  width: 29%;
+  height: 24rem;
+  vertical-align: middle;
+}
+
+#results-page .center .score-percentage h3:nth-of-type(1) {
+  margin-top: 7rem;
+  font-size: 3.8rem;
   font-weight: 400;
-  letter-spacing: -2px;
 }
 
-#results-page .scores-overview .score-percentage h3:nth-of-type(2) {
+#results-page .center .score-percentage h3:nth-of-type(2) {
   font-size: 3.75rem;
   font-weight: 700;
   margin-top: -1rem;
 }
 
-#results-page .wrong {
+#results-page .center .correct {
+  text-align: left;
+}
+
+#results-page .center .wrong {
+  text-align: right;
   color: rgba(255, 255, 255, 0.75);
 }
 
-#results-page .scores-overview p {
-  font-weight: 200;
-  font-size: 1.4rem;
-  margin-top: -0.5rem;
-}
-
-#results-page .score-percentage {
-  display: inline-block;
-  width: 29%;
-  vertical-align: middle;
-}
-
 #results-page .chart-wheel-container {
+  margin-top: -24rem;
   position: relative;
   display: inline-block;
   width: 40%;
   vertical-align: middle;
-  padding: 5rem;
-  margin: 0 0.4rem;
 }
 
-#results-page .cyan {
-  color: #00ffff;
-}
-
-#results-page .magenta {
-  color: #c2128d;
-}
-
-#results-page .container {
+#feedback {
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  top: 7.7rem;
+  left: 6rem;
+  width: 12rem;
 }
 
-#results-page .circular-progress {
-  position: relative;
-  height: 330px;
-  width: 330px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  margin: 0 auto;
-}
-
-#results-page .circular-progress:before {
-  content: "";
-  position: absolute;
-  height: 70%;
-  width: 70%;
-  border-radius: 50%;
-}
-
-#results-page .value-container {
-  position: relative;
-  font-size: 50px;
-  color: #231c3d;
-}
-
-#results-page .chart-wheel-container h5 {
+#feedback h5 {
   font-size: 1.2rem;
-  font-weight: 500;
-}
-
-#results-page .chart-wheel-container p {
-  margin-top: 1.15rem;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  font-weight: 200;
-}
-
-#results-rate-us {
-  margin-inline: auto;
-  padding: 1rem 5rem;
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
-  font-size: 1.4rem;
   font-weight: 600;
-  -webkit-box-shadow: 0px 0px 20px 0px #00ffff33;
-  -moz-box-shadow: 0px 0px 20px 0px #00ffff33;
-  -o-box-shadow: 0px 0px 20px 0px #00ffff33;
-  box-shadow: 0px 0px 20px 0px #00ffff33;
-  transition: all 0.2s ease-in-out;
 }
 
-#results-rate-us:hover {
-  -webkit-box-shadow: 0px 0px 40px 0px #00ffff80;
-  -moz-box-shadow: 0px 0px 40px 0px #00ffff80;
-  -o-box-shadow: 0px 0px 40px 0px #00ffff80;
-  box-shadow: 0px 0px 40px 0px #00ffff80;
-  transition: all 0.2s ease-in-out;
+#feedback p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+#results-page .center .magenta {
+  display: block;
+  color: var(--magenta2);
+}
+
+#results-page .center .cyan {
+  display: block;
+  color: var(--cyan);
+}
+
+#donut-2 {
+  position: absolute;
+  width: 100%;
 }
 
 #results-page .donut-ring-2 {
@@ -488,6 +448,36 @@ button {
   100% {
     stroke-dasharray: var(--complementValue) var(--dasharrayEnd);
   }
+}
+
+#results-page .bottom {
+  display: block;
+  margin-top: 4.1rem;
+  text-align: center;
+}
+
+#results-rate-us {
+  font-family: "Outfit", sans-serif;
+  margin-inline: auto;
+  padding: 1.1rem 4.8rem;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  font-size: 1.6rem;
+  font-weight: 600;
+  -webkit-box-shadow: 0px 0px 20px 0px #00ffff33;
+  -moz-box-shadow: 0px 0px 20px 0px #00ffff33;
+  -o-box-shadow: 0px 0px 20px 0px #00ffff33;
+  box-shadow: 0px 0px 20px 0px #00ffff33;
+  transition: all 0.2s ease-in-out;
+}
+
+#results-rate-us:hover {
+  -webkit-box-shadow: 0px 0px 40px 0px #00ffff80;
+  -moz-box-shadow: 0px 0px 40px 0px #00ffff80;
+  -o-box-shadow: 0px 0px 40px 0px #00ffff80;
+  box-shadow: 0px 0px 40px 0px #00ffff80;
+  transition: all 0.2s ease-in-out;
 }
 
 /* ! ---------- Feedback Page ⭐ */

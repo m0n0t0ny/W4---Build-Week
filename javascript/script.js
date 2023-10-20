@@ -42,9 +42,9 @@ function test() {
     };
 
     const correctScore = document.getElementById("correctScore");
-    correctScore.innerText = correctAnswersPercentage().toFixed(2) + "%";
+    correctScore.innerText = correctAnswersPercentage().toFixed(1) + "%";
     const wrongScore = document.getElementById("wrongScore");
-    wrongScore.innerText = wrongAnswersPercentage().toFixed(2) + "%";
+    wrongScore.innerText = wrongAnswersPercentage().toFixed(1) + "%";
 
     const answeredRight = document.getElementById("answered-right");
     answeredRight.innerText = `${correctAnswerslength}/${totalQuestions} questions`;
