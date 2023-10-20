@@ -324,7 +324,7 @@ button {
 #question-counter {
   width: 14rem;
   position: fixed;
-  bottom: 10rem;
+  bottom: 4rem;
   left: calc(100% / 2 - 7rem);
 }
 

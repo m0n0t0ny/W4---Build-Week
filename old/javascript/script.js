@@ -199,17 +199,17 @@ function loadQuestions() {
   });
 
   // TIMER ⌚
-  // function updateTimer() {
-  //   const countdown = document.getElementById("timer");
-  //   countdown.innerHTML = `<p>SECONDS<div id="time-left">${timer}</div>REMAINING</p>`;
-  //   if (timer <= 0) {
-  //     clearInterval(interval);
-  //     givenAnswers.push("overtime");
-  //     nextQuestion();
-  //   }
-  //   timer--;
-  // }
-  // interval = setInterval(updateTimer, 1000);
+  function updateTimer() {
+    const countdown = document.getElementById("timer");
+    countdown.innerHTML = `<p>SECONDS<div id="time-left">${timer}</div>REMAINING</p>`;
+    if (timer <= 0) {
+      clearInterval(interval);
+      givenAnswers.push("overtime");
+      nextQuestion();
+    }
+    timer--;
+  }
+  interval = setInterval(updateTimer, 1000);
 }
 
 loadQuestions();
