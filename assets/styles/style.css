@@ -342,17 +342,6 @@ button {
 
 /* ! ---------- Results Page 💯 */
 
-/* .title h1 {
-  font-size: 3.75rem;
-}
-
-.title h5 {
-  font-size: 1.75rem;
-  font-weight: 200;
-  margin-top: -0.5rem;
-  letter-spacing: 1px;
-} */
-
 #results-page .scores-overview {
   margin: 6rem 0;
 }
@@ -497,6 +486,7 @@ button {
   margin-top: 80px;
   text-align: center;
   font-size: 2.5rem;
+  font-family: "Outfit", sans-serif;
 }
 
 #feedback-page .txt-feedback-section p {
@@ -506,6 +496,11 @@ button {
   margin-top: 30px;
   width: 600px;
   margin-inline: auto;
+  font-family: "Outfit", sans-serif;
+}
+
+#feedback-page .rating-stars{
+  text-align: center;
 }
 
 #feedback-page .rating-stars img {
@@ -524,6 +519,7 @@ button {
   text-align: center;
   margin-top: 50px;
   font-size: 1.5rem;
+  font-family: "Outfit", sans-serif;
 }
 
 #feedback-page .feedback-area {
