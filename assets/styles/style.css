@@ -497,20 +497,19 @@ button {
 
 #feedback-page .txt-feedback-section h2 {
   color: white;
-  margin-top: 80px;
+  margin-top: 4.5rem;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3.65rem;
   font-family: "Outfit", sans-serif;
 }
 
 #feedback-page .txt-feedback-section p {
   color: white;
   text-align: center;
-  font-size: 1.5rem;
-  margin-top: 30px;
-  width: 600px;
+  max-width: 48rem;
+  font-size: 1.8rem;
+  margin-top: 1rem;
   margin-inline: auto;
-  font-family: "Outfit", sans-serif;
 }
 
 #feedback-page .rating-stars {
@@ -518,12 +517,20 @@ button {
 }
 
 #feedback-page .rating-stars img {
-  margin-top: 20px;
-  opacity: 0.2;
+  width: 3.2rem;
+  margin-top: 2.5rem;
+  opacity: 0.75;
+  filter: brightness(10%);
   cursor: pointer;
+  margin-right: 1rem;
+}
+
+#feedback-page .rating-stars img:last-child {
+  margin-right: 0;
 }
 
 #feedback-page .rating-stars img.active {
+  filter: brightness(100%);
   margin-top: 20px;
   opacity: 1;
 }
@@ -531,24 +538,24 @@ button {
 #feedback-page .comment-area p {
   color: white;
   text-align: center;
-  margin-top: 50px;
-  font-size: 1.5rem;
+  margin-top: 5.4rem;
+  font-size: 1.9rem;
   font-family: "Outfit", sans-serif;
 }
 
 #feedback-page .feedback-area {
-  width: 90%;
+  width: 100%;
   text-align: center;
 }
 
 #feedback-text {
-  margin-top: 40px;
+  margin-top: 3.7rem;
   height: 30px;
-  width: 65%;
+  width: 85%;
   resize: none;
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid #c2128d;
+  border-bottom: 3px solid #c2128d;
   background: transparent;
   font-family: "Outfit", sans-serif;
   color: white;
@@ -561,18 +568,17 @@ button {
 }
 
 #feedback-page .info-btn button {
-  width: 200px;
-  height: 60px;
   background-color: #00ffff;
   border: none;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
   box-shadow: 1px 0px 8px 3px #00ffff98;
-  font-size: 1.2rem;
+  font-size: 1.65rem;
+  padding: 1.1rem 3.25rem;
   cursor: pointer;
 }
 
 ::placeholder {
   padding-left: 30px;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
