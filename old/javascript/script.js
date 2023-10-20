@@ -1,28 +1,37 @@
-const indexPage = document.getElementById("index-page");
-const testPage = document.getElementById("test-page");
-const resultsPage = document.getElementById("results-page");
-const feedbackPage = document.getElementById("feedback-page");
-const timerContainer = document.getElementById("timer-container");
+// * INDEX 📄
 
-// ! ---------- Index 🏠
+const button = document.getElementById("proceed-button");
+const modal = document.getElementById("my-modal");
+const modalX = document.getElementById("modal-x");
+const checkbox = document.getElementById("terms");
+const proceed = document.getElementById("proceed-with-chosen-difficulty");
 
-const proceed = document.getElementById("proceed");
-proceed.addEventListener("click", goToTestPage);
+button.addEventListener("click", proceedClicked);
+modalX.addEventListener("click", closeModal);
+checkbox.addEventListener("click", toggleButton);
+proceed.addEventListener("click", proceedToTest);
 
-function goToTestPage() {
-  indexPage.classList.toggle("hide");
-  testPage.classList.toggle("hide");
+function proceedClicked() {
+  modal.style.display = "block";
 }
 
-const checkbox = document.getElementById("agreement");
-checkbox.addEventListener("change", enableProceedButton);
-
-function enableProceedButton() {
-  document.getElementById("proceed").disabled = !this.checked;
+function closeModal() {
+  modal.style.display = "none";
 }
 
-// ! ---------- TEST ✅
+function toggleButton() {
+  if (checkbox.checked) {
+    button.disabled = false;
+  } else {
+    button.disabled = true;
+  }
+}
 
+function proceedToTest() {
+  window.location.href = "./test.html";
+}
+
+// * TEST ✅
 const questions = [
   {
     category: "Science: Computers",
@@ -145,30 +154,10 @@ function getScore() {
 }
 
 function loadQuestions() {
-  const h3 = document.querySelector("#question-box h3");
+  const h2 = document.querySelector("#question-box h2");
   const answers = document.getElementById("answer-box");
 
-  function emphasizeLastNWords(question, n) {
-    const words = question.split(" ");
-    const totalWords = words.length;
-    const lastN = Math.ceil(totalWords / 2);
-    let firstEmphasized = false;
-
-    for (let i = totalWords - lastN; i < totalWords; i++) {
-      if (!firstEmphasized) {
-        words[i] = `<br /><b>${words[i]}`;
-        firstEmphasized = true;
-      } else {
-        words[i] = `<b>${words[i]}`;
-      }
-    }
-
-    const emphasizedQuestion = words.join(" ");
-    return emphasizedQuestion;
-  }
-
-  h3.innerHTML = emphasizeLastNWords(questions[currentQuestion].question);
-
+  h2.innerHTML = questions[currentQuestion].question;
   answers.innerHTML = "";
   const question = questions[currentQuestion];
   const totalAnswers = question.incorrect_answers.concat(
@@ -176,7 +165,7 @@ function loadQuestions() {
   );
 
   for (let i = 0; i < totalAnswers.length; i++) {
-    const answersDiv = document.createElement("p");
+    const answersDiv = document.createElement("div");
     const answer = document.createElement("input");
     const answerLabel = document.createElement("label");
 
@@ -194,9 +183,9 @@ function loadQuestions() {
     answers.appendChild(answersDiv);
 
     const questionCounter = document.getElementById("question-counter");
-    questionCounter.innerHTML = `<h5>QUESTION &nbsp;${
+    questionCounter.innerHTML = `<p>QUESTION &nbsp;${
       currentQuestion + 1
-    } <span>/ ${questions.length}</span></h5>`;
+    } <span>/ ${questions.length}</span></p>`;
   }
 
   const answerButton = document.querySelectorAll("input");
@@ -209,7 +198,7 @@ function loadQuestions() {
     });
   });
 
-  // Timer ⌚
+  // TIMER ⌚
   function updateTimer() {
     const countdown = document.getElementById("timer");
     countdown.innerHTML = `<p>SECONDS <div id="time-left">${timer}</div> REMAINING</p>`;
@@ -225,7 +214,7 @@ function loadQuestions() {
 
 loadQuestions();
 
-// Next Question ❓
+// NEXT QUESTION ❓
 
 function nextQuestion() {
   clearInterval(interval);
@@ -243,8 +232,8 @@ function nextQuestion() {
     document.getElementById("answer-box").remove();
     document.getElementById("question-box").remove();
     document.getElementById("next-question").remove();
-    testPage.classList.toggle("hide");
-    resultsPage.classList.toggle("hide");
+    testHtml.classList.add("displayNone");
+    resultsHtml.classList.add("display");
 
     console.log("totalQuestions:", totalQuestions);
     console.log("correctAnswers:", correctAnswers);
@@ -254,7 +243,7 @@ function nextQuestion() {
   }
 }
 
-// ! ---------- Results Page 💯
+// * RESULT 💯
 
 const loadDonutWheel = () => {
   const svg = document.getElementById("donut-2");
@@ -318,17 +307,15 @@ const loadDonutWheel = () => {
     donutChartValues.strokeDasharray
   );
 
-  const resultsRateUs = document.getElementById("results-rate-us");
-  resultsRateUs.addEventListener("click", goToFeedbackPage);
-
-  function goToFeedbackPage() {
-    resultsPage.classList.toggle("hide");
-    feedbackPage.classList.toggle("hide");
+  function leaveAFeedback() {
+    window.location.href = "./feedback.html";
   }
+
+  const resultsRateUs = document.getElementById("results-rate-us");
+  resultsRateUs.addEventListener("click", leaveAFeedback);
 };
 
-// ! ---------- Feedback Page ⭐
-
+// * STARS RATING ⭐
 const stars = document.querySelectorAll(".rating-stars img");
 
 stars.forEach((star, index1) => {
@@ -342,9 +329,8 @@ stars.forEach((star, index1) => {
 });
 
 const backToIndex = document.getElementById("back-to-index");
-backToIndex.addEventListener("click", goToIndexPage);
+backToIndex.addEventListener("click", loopBack);
 
-function goToIndexPage() {
-  feedbackPage.classList.toggle("hide");
-  indexPage.classList.toggle("hide");
+function loopBack() {
+  window.location.href = "./index.html";
 }
